@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { Box, Button, Heading, VStack } from '@chakra-ui/react';
+import { Box, Button, Heading, VStack, Wrap } from '@chakra-ui/react';
 import { BsArrowRight as RightArrowIcon } from '@meronex/icons/bs';
 
 const Index: React.FC = () => {
@@ -11,11 +11,18 @@ const Index: React.FC = () => {
           {`(which probably don't work)`}
         </Box>
       </VStack>
-      <NextLink href="/mtu">
-        <Button rightIcon={<RightArrowIcon />} colorScheme="blue">
-          Juniper MTU Calculator
-        </Button>
-      </NextLink>
+      <Wrap shouldWrapChildren>
+        <NextLink href="/mtu">
+          <Button rightIcon={<RightArrowIcon />} colorScheme="blue">
+            Juniper MTU Calculator
+          </Button>
+        </NextLink>
+        <NextLink href="/burst">
+          <Button rightIcon={<RightArrowIcon />} colorScheme="blue">
+            Burst Size Calculator
+          </Button>
+        </NextLink>
+      </Wrap>
     </VStack>
   );
 };
