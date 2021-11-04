@@ -44,8 +44,8 @@ const Mtu: React.FC = () => {
   }, [interfaceMtu, vlanTags, mplsLabels]);
 
   const configs = useMemo<string>(() => {
-    const ipv4 = `set interfaces ${interfaceName} family inet.0 mtu ${ipMtu}`;
-    const ipv6 = `set interfaces ${interfaceName} family inet6.0 mtu ${ipMtu}`;
+    const ipv4 = `set interfaces ${interfaceName} family inet mtu ${ipMtu}`;
+    const ipv6 = `set interfaces ${interfaceName} family inet6 mtu ${ipMtu}`;
     const mpls = `set interfaces ${interfaceName} family mpls mtu ${mplsMtu}`;
     switch (family) {
       case 'ipv4':
